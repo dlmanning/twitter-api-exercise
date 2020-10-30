@@ -39,7 +39,7 @@ app.listen(port, () => {
 });
 
 const req = request('https://stream.twitter.com/1.1/statuses/sample.json', {
-  oauth: conf
+  oauth
 });
 
 req.on('error', err => {
