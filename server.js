@@ -49,7 +49,7 @@ req.on('error', err => {
 req.on('response', resp => {
   resp.on('data', chunk => {
     // Transfer incoming chunk to worker thread
-    tweetParserWorker.postMessage(chunk, [chunk.buffer]);;
+    tweetParserWorker.postMessage(chunk, [chunk.buffer]);
     // chunk is now unusable
   });
 });
