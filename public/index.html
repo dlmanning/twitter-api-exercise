@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .toplist-container {
+      display: flex;
+    }
+
+    .inline-container {
+      margin: 20px;
+    }
+  </style>
+  <title>Twitter Stats</title>
+</head>
+
+<body>
+  <h1>Twitter Summary Stats:</h1>
+
+  <h2>Total Tweets: <span id="total-tweets"></span></h2>
+
+  <h2>Average Tweets per (second / minute / hour): <span id="tweet-rate"></span></h2>
+
+  <h2>Percent Tweets containing a URL: <span id="percent-url"></span></h2>
+  <h2>Percent Tweets containing a photo URL: <span id="percent-photo-url"></span></h2>
+  <h2>Percent Tweets containing an emoji: <span id="percent-emoji"></span></h2>
+
+  <div class="toplist-container">
+    <div class="inline-container">
+      <h2>Top Emoji</h2>
+      <ol id="top-emoji"></ol>
+    </div>
+
+    <div class="inline-container">
+      <h2>Top Hashtags</h2>
+      <ol id="top-hashtags"></ol>
+    </div>
+
+    <div class="inline-container">
+      <h2>Top Domains</h2>
+      <ol id="top-domains"></ol>
+    </div>
+  </div>
+
+
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>
