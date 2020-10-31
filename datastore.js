@@ -118,15 +118,15 @@ function updateDataStore(dataStore, message) {
     dataStore.tweetsWithPhotoURL += 1;
   }
 
-  for (domain of message.domains) {
+  for (const domain of message.domains) {
     dataStore.domains.add(domain);
   }
 
-  for (hashtag of message.hashtags) {
+  for (const hashtag of message.hashtags) {
     dataStore.hashtags.add(hashtag);
   }
 
-  for (emoji of message.emojis) {
+  for (const emoji of message.emojis) {
     dataStore.emojis.add(emoji);
   }
 }
