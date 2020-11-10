@@ -16,34 +16,29 @@ module.exports = class TopList {
    * @param {any} newValue - A value to add to the list
    */
   add(newValue) {
+    const list = this._list;
     // Insertion will be worst case O(N), but should amortorize lower since
     // more common values will naturally bubble to the beginning of the list
-    const idx = this._list.findIndex(([value, _]) => {
+    let idx = list.findIndex(([value, _]) => {
       return value === newValue;
     });
 
     if (idx < 0) {
-      this._list.push([newValue, 1]);
+      list.push([newValue, 1]);
       return;
     }
 
-    this._list[idx][COUNT] += 1;
+    list[idx][COUNT] += 1;
 
-    if (idx > 0) { // might need to swap elements now to maintain sort
-      bubble(this._list, idx);
-    }
-
-    // bubble entries forward in the list until their count is not greater than
-    // their predeccessor
-    function bubble(list, idx) {
+    while (idx > 0) {
       if (list[idx][COUNT] > list[idx - 1][COUNT]) {
         const temp = list[idx - 1];
         list[idx - 1] = list[idx];
         list[idx] = temp;
 
-        if (idx > 1) {
-          bubble(list, idx - 1);
-        }
+        idx -= 1;
+      } else {
+        break;
       }
     }
   }
